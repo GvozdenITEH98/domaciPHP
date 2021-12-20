@@ -1,0 +1,27 @@
+* index.php je pocetni fajl, sastoji se od landing dela, o nama dela i quote dela.
+  koriscen je samo html i css
+
+* header.php ovde se nalaze linkovi do css-a, bootstrapa, i font-awesome-a kao i sam navbar
+
+* footer.php sadrzi link do javascript fajla i jquery-a 
+
+* Database.php je klasa koja upravlja sa bazom i u njoj se nalaze metode za CRUD operacije
+
+* automobili.php, motori.php izlistavaju sve automobile i motore iz baze koriscenjem select
+metode iz DB klase.
+
+* dodajAutomobil.php i dodajMotor.php sluze za dodavanje novih vozila u bazu,
+sastoje se iz forme, sa odgovarajucim inputima, koja salje POST zahtev na server
+server proverava da li ima odgovarajuceg post zahteva i ukoliko ima uzima sva 
+polja koja su poslata i proverava da li su prazna i pravi niz gresaka sa svim praznim poljima
+ukoliko je sve u redu, poziva se insert metoda i korisnik se preusmerava na admin.php stranu
+
+* updateAutomobil.php i updateMotor.php su slicno uradjeni kao dodavanje osim toga sto 
+sada radimo update odgovarajuceg automobila. tako sto preko url-a saljemo preko query parametra
+id automobila / motora koji zelimo da update
+
+sort.php i search.php prihvataju post zahteve od ajaxa i izvrsavaju odgovarajuce operacije
+u bazi i vracaju JSON
+
+* admin.php u ovom fajlu se izlistavaju svi motori i automobili u vidu tabale.
+svako automobil i motor je moguce edit-ovati kao i obrisati
