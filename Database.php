@@ -21,7 +21,7 @@ class Database {
   }
 
   function Connect() {
-    $this->dblink = new mysqli($this->hostname, $this->username, $this->password, $this->dbname);
+    $this->dblink = new mysqli($this->hostname, $this->username, $this->password, "db");
     if ($this->dblink->connect_errno) {
       printf("Konekcija neuspešna: %s\n", $this->dblink->connect_error);
       exit();

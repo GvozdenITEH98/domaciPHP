@@ -19,8 +19,8 @@
 
 <?php
 
-$db->select("automobili", $rows = "*", null, null, null);
-$automobili = $db->getResult()->fetch_all(MYSQLI_ASSOC);
+$db->select("product", $rows = "*", null, null, null);
+$proizvodi = $db->getResult()->fetch_all(MYSQLI_ASSOC);
 
 ?>
 
@@ -28,33 +28,13 @@ $automobili = $db->getResult()->fetch_all(MYSQLI_ASSOC);
   <div class="container">
     <div class="row" id="automobili-container">
 
-      <?php foreach ($automobili as $automobil) : ?>
+      <?php foreach ($proizvodi as $proizvod) : ?>
 
-        <div class="col-md-4 col-sm-6 col-12 mt-4">
-          <div class="card">
-            <div class="card-img">
-              <img src="<?php echo $automobil['img']; ?>" alt="">
-              <div class="card-polovan">
-                <?php
-
-                if ($automobil['polovan']) {
-                  echo "POLOVAN";
-                } else {
-                  echo "NOV";
-                }
-
-                ?>
-              </div>
-            </div>
+        
             <div class="card-sadrzaj">
-              <h4 class="card-naziv"><?php echo $automobil['marka'] . " " . $automobil['naziv'] . " " . $automobil['kubikaza'] . "cm3"; ?></h4>
-              <p class="card-cena"><?php echo $automobil['cena']; ?> E</p>
-              <p class="card-opis"><?php echo substr($automobil['opis'], 0, 250); ?></p>
-              <div class="card-specs">
-                <div class="spec"><i class="far fa-calendar-alt"></i><br><?php echo $automobil['godina']; ?></div>
-                <div class="spec"><i class="fas fa-road"></i><br><?php echo $automobil['kilometraza']; ?> KM</div>
-                <div class="spec"><i class="fas fa-gas-pump"></i><br><?php echo $automobil['gorivo']; ?></div>
-                <div class="spec"><i class="fas fa-horse-head"></i><br><?php echo $automobil['konjaza']; ?> HP</div>
+              <h4 class="card-naziv"><?php echo $proizvod['id'] ; ?></h4>
+              <p class="card-cena"><?php echo $proizvod['name']; ?> </p>
+              <p class="card-opis"><?php echo substr($proizvod['categoryId'], 0, 250); ?></p>
               </div>
 
             </div>
